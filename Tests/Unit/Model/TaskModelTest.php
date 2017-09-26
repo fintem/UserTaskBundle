@@ -1,6 +1,6 @@
 <?php
 
-namespace Unit\Core\AppBundle\Model;
+namespace Fintem\UserTaskBundle\Test\Unit\Model;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
