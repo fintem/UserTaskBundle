@@ -17,9 +17,6 @@ trait UUIDTrait
      * @ORM\Column(name="id", type="guid")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
-     * @SE\Expose
-     * @SE\Groups({"default"})
-     * @SE\Type("string")
      */
     protected $itemId;
 

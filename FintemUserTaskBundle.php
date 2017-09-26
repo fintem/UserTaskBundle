@@ -10,10 +10,4 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  */
 class FintemUserTaskBundle extends Bundle
 {
-    /**
-     * @param ContainerBuilder $container
-     */
-    public function build(ContainerBuilder $container)
-    {
-    }
 }

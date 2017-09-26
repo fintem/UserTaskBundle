@@ -4,6 +4,7 @@ namespace Fintem\UserTaskBundle\Entity;
 
 use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
+use Fintem\UserTaskBundle\Entity\Traits\UUIDTrait;
 use Fintem\UserTaskBundle\Utils\Dates;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -16,6 +17,8 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class TaskAssignee
 {
+    use UUIDTrait;
+
     /**
      * @var DateTimeImmutable
      * @Gedmo\Timestampable(on="create")
@@ -24,7 +27,7 @@ class TaskAssignee
     private $assignedAt;
     /**
      * @var Task
-     * @ORM\ManyToOne(targetEntity="Core\AppBundle\Entity\Task\Task", inversedBy="assignees")
+     * @ORM\ManyToOne(targetEntity="Fintem\UserTaskBundle\Entity\Task", inversedBy="assignees")
      * @ORM\JoinColumn(name="taskId", referencedColumnName="id")
      */
     private $task;
@@ -35,7 +38,7 @@ class TaskAssignee
     private $unassignedAt;
     /**
      * @var TaskUserInterface
-     * @ORM\ManyToOne(targetEntity="Core\AppBundle\Entity\Task\TaskUserInterface")
+     * @ORM\ManyToOne(targetEntity="Fintem\UserTaskBundle\Entity\TaskUserInterface")
      */
     private $user;
 

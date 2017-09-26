@@ -23,13 +23,13 @@ class Task
 
     /**
      * @var TaskAssignee|null
-     * @ORM\OneToOne(targetEntity="Core\AppBundle\Entity\Task\TaskAssignee", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="Fintem\UserTaskBundle\Entity\TaskAssignee", cascade={"persist"})
      * @ORM\JoinColumn(name="taskAssigneeId", referencedColumnName="id", nullable=true)
      */
     private $assignee;
     /**
      * @var ArrayCollection|TaskAssignee[]
-     * @ORM\OneToMany(targetEntity="Core\AppBundle\Entity\Task\TaskAssignee", mappedBy="task", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Fintem\UserTaskBundle\Entity\TaskAssignee", mappedBy="task", cascade={"persist"})
      * @ORM\OrderBy({"assignedAt" = "DESC"})
      */
     private $assignees;
