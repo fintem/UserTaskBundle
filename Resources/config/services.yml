@@ -1,0 +1,19 @@
+# Controllers
+    controller.task:
+        class: Fintem\UserTaskBundle\Controller\TaskController
+        arguments:
+            - '@model.task'
+
+# Models
+    model.task:
+        class: Fintem\UserTaskBundle\Model\TaskModel
+        arguments:
+            - '@doctrine.orm.default_entity_manager'
+
+# Param converters
+    param_converter.task:
+        class: Core\AppBundle\Request\ParamConverter\TaskParamConverter
+        arguments:
+            - '@model.task'
+        tags:
+            - { name: request.param_converter, priority: 0, converter: task }
