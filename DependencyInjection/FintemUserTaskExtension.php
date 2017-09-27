@@ -8,7 +8,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
 /**
- * Class UserTaskExtension.
+ * Class FintemUserTaskExtension.
  */
 class FintemUserTaskExtension extends Extension
 {

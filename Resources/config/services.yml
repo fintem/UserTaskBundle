@@ -1,9 +1,4 @@
 services:
-# Controllers
-    controller.task:
-        class: Fintem\UserTaskBundle\Controller\TaskController
-        arguments:
-            - '@model.task'
 
 # Models
     model.task:
@@ -18,3 +13,11 @@ services:
             - '@model.task'
         tags:
             - { name: request.param_converter, priority: 0, converter: task }
+
+# Twig extensions
+    twig.extension.task:
+        class: Fintem\UserTaskBundle\Twig\TaskExtension
+        arguments:
+            - '@model.task'
+        tags:
+            - { name: twig.extension }
