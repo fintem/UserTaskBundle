@@ -8,6 +8,7 @@ use Fintem\UserTaskBundle\Entity\Task;
 use Fintem\UserTaskBundle\Entity\TaskAssignee;
 use Fintem\UserTaskBundle\Entity\TaskUserInterface;
 use Fintem\UserTaskBundle\Exception\TaskAssignedException;
+use Fintem\UserTaskBundle\Exception\TaskUnassignedException;
 
 /**
  * Class TaskModel.
@@ -70,9 +71,14 @@ class TaskModel
      * @param Task $task
      *
      * @return Task
+     * @throws TaskUnassignedException
      */
     public function unassign(Task $task) : Task
     {
+        if (null === $task->getAssignee()) {
+            throw new TaskUnassignedException('Task already unassigned');
+        }
+
         $task->unassign();
         $this->em->flush();
 

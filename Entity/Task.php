@@ -162,6 +162,10 @@ class Task
      */
     public function unassign()
     {
+        if (null === $this->assignee) {
+            return $this;
+        }
+
         $this->assignee->unassign();
         $this->assignee = null;
 
