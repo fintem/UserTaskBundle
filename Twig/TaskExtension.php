@@ -37,27 +37,29 @@ class TaskExtension extends \Twig_Extension
     }
 
     /**
-     * @param string $referredInstanceId
-     * @param string $referredInstanceType
+     * @param string      $referredInstanceId
+     * @param string      $referredInstanceType
+     * @param string|null $type
      *
-     * @return Task|null
+     * @return null|Task
      */
-    public function getTask(string $referredInstanceId, string $referredInstanceType)
+    public function getTask(string $referredInstanceId, string $referredInstanceType, string $type = null)
     {
-        $task = $this->taskModel->getTask($referredInstanceId, $referredInstanceType);
+        $task = $this->taskModel->getTask($referredInstanceId, $referredInstanceType, $type);
 
         return $task ? $task : null;
     }
 
     /**
-     * @param string $referredInstanceId
-     * @param string $referredInstanceType
+     * @param string      $referredInstanceId
+     * @param string      $referredInstanceType
+     * @param string|null $type
      *
      * @return bool
      */
-    public function isTaskAssigned(string $referredInstanceId, string $referredInstanceType)
+    public function isTaskAssigned(string $referredInstanceId, string $referredInstanceType, string $type = null)
     {
-        $task = $this->taskModel->getTask($referredInstanceId, $referredInstanceType);
+        $task = $this->taskModel->getTask($referredInstanceId, $referredInstanceType, $type);
 
         return $task ? $task->isAssigned() : false;
     }

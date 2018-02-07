@@ -52,17 +52,20 @@ class TaskModel
     }
 
     /**
-     * @param string $referredInstanceId
-     * @param string $referredInstanceType
+     * @param string      $referredInstanceId
+     * @param string      $referredInstanceType
+     * @param string|null $type
      *
-     * @return Task
-     *
-     * @throws EntityNotFoundException
+     * @return null|Task
      */
-    public function getTask(string $referredInstanceId, string $referredInstanceType)
+    public function getTask(string $referredInstanceId, string $referredInstanceType, string $type = null)
     {
         $repo = $this->em->getRepository(Task::class);
         $criteria = ['referredInstanceId' => $referredInstanceId, 'referredInstanceType' => $referredInstanceType];
+
+        if (null !== $type) {
+            $criteria['type'] = $type;
+        }
 
         return $repo->findOneBy($criteria);
     }
