@@ -7,11 +7,13 @@
   ],
   "type": "symfony-bundle",
   "require": {
-    "doctrine/orm": "2.5.*",
-    "stof/doctrine-extensions-bundle": "^1.2",
-    "sensio/framework-extra-bundle": "5.*",
-    "ramsey/uuid": "^3.6",
-    "fintem/unit-test-case": "^2.1"
+     "php": "^7.0",
+     "symfony/symfony": "2.8.*",
+     "doctrine/orm": "2.5.*",
+     "stof/doctrine-extensions-bundle": "1.2.x-dev",
+     "sensio/framework-extra-bundle": "~3.0",
+     "ramsey/uuid": "^3.6",
+     "fintem/unit-test-case": "^2.1"
   },
   "require-dev": {
     "phpunit/phpunit": "5.7.5"
